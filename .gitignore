@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Binary executables
+cloudflared.exe
+*.exe
+
+# Build outputs
+client/dist/
+
+# Uploaded candidate CVs & live registrations (protecting candidate data)
+server/uploads/cvs/*
+!server/uploads/cvs/.gitkeep
+server/data/*.xlsx
+server/data/*.json
+!server/data/.gitkeep
+
+# System & Editor files
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

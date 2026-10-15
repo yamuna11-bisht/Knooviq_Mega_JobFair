@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Networking Service Provider / Field Engineer – Vendor Registration Form | Knooviq Industries Pvt Ltd</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1a73e8;
+      --primary-dark: #0d47a1;
+      --primary-light: #e8f0fe;
+      --bg-color: #f0f4f9;
+      --card-bg: #ffffff;
+      --text-main: #202124;
+      --text-secondary: #5f6368;
+      --border-color: #dadce0;
+      --error-color: #d93025;
+      --focus-color: #1a73e8;
+      --card-radius: 8px;
+      --shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+      --font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: var(--font-family);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 24px 12px 64px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Form Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card.focused {
+      border-left: 5px solid var(--focus-color);
+    }
+
+    .card.has-error {
+      border-left: 5px solid var(--error-color) !important;
+    }
+
+    /* Header Card */
+    .header-card {
+      border-top: 10px solid var(--primary-color);
+      padding-top: 24px;
+      overflow: hidden;
+    }
+
+    .brand-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .brand-logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      max-width: 48px;
+      object-fit: contain;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(17, 35, 84, 0.2);
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 4px rgba(26, 115, 232, 0.3);
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.2px;
+    }
+
+    .badge-tag {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .form-description {
+      font-size: 0.95rem;
+      color: #3c4043;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .requirements-box {
+      background-color: #f8fafd;
+      border: 1px solid #d2e3fc;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .requirements-box h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .requirements-box ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .requirements-box ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      color: #3c4043;
+    }
+
+    .requirements-box ul li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .desc-closing {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #444746;
+      margin-top: 12px;
+    }
+
+    .required-indicator-note {
+      font-size: 0.85rem;
+      color: var(--error-color);
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Question Cards */
+    .question-title {
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .required-star {
+      color: var(--error-color);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .question-instruction {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* Inputs - Google Forms Clean Underline / Outlined Style */
+    .input-wrapper {
+      position: relative;
+      margin-top: 12px;
+      width: 100%;
+    }
+
+    .text-input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #70757a;
+      padding: 8px 0;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-main);
+      background: transparent;
+      outline: none;
+      transition: border-bottom-color 0.2s ease;
+    }
+
+    .text-input:focus {
+      border-bottom: 2px solid var(--focus-color);
+      padding-bottom: 7px;
+    }
+
+    .text-input::placeholder {
+      color: #80868b;
+      font-size: 0.9rem;
+    }
+
+    .textarea-input {
+      width: 100%;
+      min-height: 80px;
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #fafafa;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .textarea-input:focus {
+      background: #ffffff;
+      border-color: var(--focus-color);
+      box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+    }
+
+    .textarea-input::placeholder {
+      color: #80868b;
+      font-size: 0.9rem;
+    }
+
+    /* Radio Group (Google Forms Style) */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      user-select: none;
+      position: relative;
+    }
+
+    .radio-input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .custom-radio {
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border: 2px solid #5f6368;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .radio-label:hover .custom-radio {
+      border-color: var(--primary-color);
+      background-color: rgba(26, 115, 232, 0.04);
+    }
+
+    .radio-input:checked ~ .custom-radio {
+      border-color: var(--primary-color);
+    }
+
+    .radio-input:checked ~ .custom-radio::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary-color);
+    }
+
+    .radio-input:focus ~ .custom-radio {
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.18);
+    }
+
+    /* Checkbox (Confirmation) */
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      color: #202124;
+      line-height: 1.45;
+      user-select: none;
+      font-weight: 500;
+    }
+
+    .checkbox-input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .custom-checkbox {
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      border: 2px solid #5f6368;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .checkbox-label:hover .custom-checkbox {
+      border-color: var(--primary-color);
+      background-color: rgba(26, 115, 232, 0.04);
+    }
+
+    .checkbox-input:checked ~ .custom-checkbox {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .checkbox-input:checked ~ .custom-checkbox::after {
+      content: "";
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      margin-bottom: 2px;
+    }
+
+    .checkbox-input:focus ~ .custom-checkbox {
+      box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.18);
+    }
+
+    /* Error Message */
+    .error-msg {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--error-color);
+      margin-top: 8px;
+    }
+
+    .has-error .error-msg {
+      display: flex;
+    }
+
+    .error-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Form Actions */
+    .actions-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding: 0 4px;
+    }
+
+    .btn-submit {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-submit:hover {
+      background-color: #1557b0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-submit:active {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-clear {
+      background: transparent;
+      border: none;
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: inherit;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-clear:hover {
+      background-color: rgba(26, 115, 232, 0.08);
+    }
+
+    /* Footer Notice */
+    .footer-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 24px;
+      line-height: 1.6;
+    }
+
+    .footer-note a {
+      color: var(--text-secondary);
+      text-decoration: underline;
+    }
+
+    /* Confirmation Success Card */
+    .success-card {
+      display: none;
+      text-align: left;
+    }
+
+    .success-header {
+      border-top: 10px solid var(--primary-color);
+    }
+
+    .success-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #e6f4ea;
+      color: #137333;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .success-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .success-org {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .success-msg-box {
+      background-color: #f8fafd;
+      border-left: 4px solid var(--primary-color);
+      padding: 16px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      color: #1f1f1f;
+      line-height: 1.5;
+    }
+
+    .success-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-block;
+      padding: 6px 0;
+    }
+
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+
+    .response-summary {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      display: none;
+    }
+
+    .response-summary.active {
+      display: block;
+    }
+
+    .summary-item {
+      margin-bottom: 12px;
+    }
+
+    .summary-key {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .summary-val {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      margin-top: 2px;
+      white-space: pre-line;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      body {
+        padding: 12px 6px 40px 6px;
+      }
+      .card {
+        padding: 18px 16px;
+      }
+      .form-title {
+        font-size: 1.45rem;
+      }
+      .actions-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .btn-submit {
+        justify-content: center;
+        width: 100%;
+      }
+      .btn-clear {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="form-container" id="mainContainer">
+    
+    <!-- Registration Form -->
+    <form id="vendorForm" novalidate>
+      <div class="form-container">
+        
+        <!-- Header Card -->
+        <header class="card header-card" id="card-header">
+          <div class="brand-bar">
+            <div class="brand-logo-badge">
+              <img src="logo.png" alt="Knooviq Industries Logo" class="brand-logo-img">
+              <span class="brand-name">Knooviq Industries Pvt Ltd</span>
+            </div>
+            <span class="badge-tag">Vendor Portal</span>
+          </div>
+
+          <h1 class="form-title">Networking Service Provider / Field Engineer – Vendor Registration Form</h1>
+          
+          <div class="form-description">
+            Knooviq Industries Pvt Ltd is looking to partner with reliable networking service providers and field engineers for upcoming B2B client projects involving <strong>Router & Switch Installation, Configuration and Testing at client locations</strong>.
+          </div>
+
+          <div class="requirements-box">
+            <h4>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+              </svg>
+              Project Requirements & Terms:
+            </h4>
+            <ul>
+              <li>Approximately 20 site visits per day</li>
+              <li>Project duration: 20 working days</li>
+              <li>Installation, configuration and testing must be completed correctly in a single visit</li>
+              <li>No payment for revisits caused by incomplete or incorrect work</li>
+              <li>Engineers should have relevant networking installation experience</li>
+              <li>Long-term business partnership opportunities</li>
+            </ul>
+          </div>
+
+          <p class="desc-closing">Please provide the following details accurately.</p>
+
+          <div class="required-indicator-note">
+            * Indicates required question
+          </div>
+        </header>
+
+        <!-- Field 1: Vendor / Company Name -->
+        <section class="card question-card" id="card-q1">
+          <label for="vendorName" class="question-title">
+            1. Vendor / Company Name <span class="required-star">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="vendorName" 
+              name="vendorName" 
+              class="text-input" 
+              placeholder="Your answer"
+              required 
+              aria-required="true"
+              aria-describedby="err-q1"
+            >
+          </div>
+          <div class="error-msg" id="err-q1" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 2: Contact Person Name -->
+        <section class="card question-card" id="card-q2">
+          <label for="contactPerson" class="question-title">
+            2. Contact Person Name <span class="required-star">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="contactPerson" 
+              name="contactPerson" 
+              class="text-input" 
+              placeholder="Your answer"
+              required 
+              aria-required="true"
+              aria-describedby="err-q2"
+            >
+          </div>
+          <div class="error-msg" id="err-q2" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 3: Mobile Number (Indian validation) -->
+        <section class="card question-card" id="card-q3">
+          <label for="mobileNumber" class="question-title">
+            3. Mobile Number <span class="required-star">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              type="tel" 
+              id="mobileNumber" 
+              name="mobileNumber" 
+              class="text-input" 
+              placeholder="10-digit Indian mobile number (e.g. 9876543210)"
+              required 
+              aria-required="true"
+              aria-describedby="err-q3"
+            >
+          </div>
+          <div class="error-msg" id="err-q3" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span id="err-q3-text">This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 4: Email Address -->
+        <section class="card question-card" id="card-q4">
+          <label for="emailAddress" class="question-title">
+            4. Email Address <span class="required-star">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              type="email" 
+              id="emailAddress" 
+              name="emailAddress" 
+              class="text-input" 
+              placeholder="Your email address"
+              required 
+              aria-required="true"
+              aria-describedby="err-q4"
+            >
+          </div>
+          <div class="error-msg" id="err-q4" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span id="err-q4-text">This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 5: Locations / Cities You Can Support -->
+        <section class="card question-card" id="card-q5">
+          <label for="locations" class="question-title">
+            5. Locations / Cities You Can Support <span class="required-star">*</span>
+          </label>
+          <div class="question-instruction">Example: Mumbai, Thane, Pune, Nashik, etc.</div>
+          <div class="input-wrapper">
+            <textarea 
+              id="locations" 
+              name="locations" 
+              class="textarea-input" 
+              rows="3" 
+              placeholder="Your answer"
+              required 
+              aria-required="true"
+              aria-describedby="err-q5"
+            ></textarea>
+          </div>
+          <div class="error-msg" id="err-q5" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 6: Number of Engineers Available -->
+        <section class="card question-card" id="card-q6">
+          <label for="engineersCount" class="question-title">
+            6. Number of Engineers Available <span class="required-star">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="engineersCount" 
+              name="engineersCount" 
+              class="text-input" 
+              placeholder="Your answer"
+              required 
+              aria-required="true"
+              aria-describedby="err-q6"
+            >
+          </div>
+          <div class="error-msg" id="err-q6" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 7: Networking Installation Experience -->
+        <section class="card question-card" id="card-q7">
+          <fieldset style="border:none; padding:0; margin:0;">
+            <legend class="question-title">
+              7. Networking Installation Experience <span class="required-star">*</span>
+            </legend>
+            <div class="radio-group" role="radiogroup" aria-required="true" aria-describedby="err-q7">
+              <label class="radio-label">
+                <input type="radio" name="experience" value="Less than 1 year" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>Less than 1 year</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="experience" value="1–2 years" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>1–2 years</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="experience" value="2–5 years" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>2–5 years</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="experience" value="5+ years" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>5+ years</span>
+              </label>
+            </div>
+          </fieldset>
+          <div class="error-msg" id="err-q7" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 8: Single Visit Installation & Testing -->
+        <section class="card question-card" id="card-q8">
+          <fieldset style="border:none; padding:0; margin:0;">
+            <legend class="question-title">
+              8. Can your engineers complete Router &amp; Switch Installation, Configuration and Testing in a single visit? <span class="required-star">*</span>
+            </legend>
+            <div class="radio-group" role="radiogroup" aria-required="true" aria-describedby="err-q8">
+              <label class="radio-label">
+                <input type="radio" name="singleVisit" value="Yes" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="singleVisit" value="No" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>No</span>
+              </label>
+            </div>
+          </fieldset>
+          <div class="error-msg" id="err-q8" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 9: 20 Site Visits per Day Support -->
+        <section class="card question-card" id="card-q9">
+          <fieldset style="border:none; padding:0; margin:0;">
+            <legend class="question-title">
+              9. Can you support approximately 20 site visits per day for 20 working days? <span class="required-star">*</span>
+            </legend>
+            <div class="radio-group" role="radiogroup" aria-required="true" aria-describedby="err-q9">
+              <label class="radio-label">
+                <input type="radio" name="siteVisitsSupport" value="Yes" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="siteVisitsSupport" value="No" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>No</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="siteVisitsSupport" value="Partially" class="radio-input">
+                <span class="custom-radio"></span>
+                <span>Partially</span>
+              </label>
+            </div>
+          </fieldset>
+          <div class="error-msg" id="err-q9" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 10: Commercial Proposal / Expected Charges -->
+        <section class="card question-card" id="card-q10">
+          <label for="commercialProposal" class="question-title">
+            10. Commercial Proposal / Expected Charges <span class="required-star">*</span>
+          </label>
+          <div class="question-instruction">
+            Please mention your applicable charges clearly, including whether charges are per site, per engineer, or based on any other pricing model.
+          </div>
+          <div class="input-wrapper">
+            <textarea 
+              id="commercialProposal" 
+              name="commercialProposal" 
+              class="textarea-input" 
+              rows="4" 
+              placeholder="Your answer"
+              required 
+              aria-required="true"
+              aria-describedby="err-q10"
+            ></textarea>
+          </div>
+          <div class="error-msg" id="err-q10" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>This is a required question</span>
+          </div>
+        </section>
+
+        <!-- Field 11: Additional Information -->
+        <section class="card question-card" id="card-q11">
+          <label for="additionalInfo" class="question-title">
+            11. Additional Information <span style="font-size:0.85rem; font-weight:normal; color:#5f6368; margin-left:4px;">(Optional)</span>
+          </label>
+          <div class="input-wrapper">
+            <textarea 
+              id="additionalInfo" 
+              name="additionalInfo" 
+              class="textarea-input" 
+              rows="3" 
+              placeholder="Your answer"
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- Final Confirmation Checkbox -->
+        <section class="card question-card" id="card-confirmation">
+          <label class="checkbox-label" for="confirmationCheckbox">
+            <input 
+              type="checkbox" 
+              id="confirmationCheckbox" 
+              name="confirmation" 
+              class="checkbox-input"
+              required
+              aria-required="true"
+              aria-describedby="err-confirmation"
+            >
+            <span class="custom-checkbox"></span>
+            <span>I confirm that the information provided above is accurate and that our team can support the stated networking installation requirements. <span class="required-star">*</span></span>
+          </label>
+          <div class="error-msg" id="err-confirmation" role="alert">
+            <svg class="error-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span>Please confirm accuracy before submitting</span>
+          </div>
+        </section>
+
+        <!-- Submit & Actions Bar -->
+        <div class="actions-bar">
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span>Submit Vendor Details</span>
+          </button>
+          <button type="button" class="btn-clear" id="clearBtn">Clear form</button>
+        </div>
+
+        <div class="footer-note">
+          Never submit passwords or sensitive credentials through web forms.<br>
+          This content is created by <strong>Knooviq Industries Pvt Ltd</strong>.
+        </div>
+
+      </div>
+    </form>
+
+    <!-- Submission Confirmation Card (Shown upon successful submission) -->
+    <div class="card success-card" id="successCard" role="region" aria-live="polite">
+      <div class="brand-bar" style="margin-bottom:12px;">
+        <div class="brand-logo-badge">
+          <img src="logo.png" alt="Knooviq Industries Logo" class="brand-logo-img">
+          <span class="brand-name">Knooviq Industries Pvt Ltd</span>
+        </div>
+        <span class="badge-tag" style="background:#e6f4ea; color:#137333;">Submitted</span>
+      </div>
+      
+      <h2 class="success-title">Networking Service Provider / Field Engineer – Vendor Registration Form</h2>
+      <span class="success-org">B2B Vendor Procurement &amp; Onboarding</span>
+
+      <div class="success-msg-box">
+        <strong>Thank you for submitting your details to Knooviq Industries Pvt Ltd.</strong> Our team will review your information and contact you regarding the next steps.
+      </div>
+
+      <div class="success-actions">
+        <button type="button" class="btn-link" id="toggleSummaryBtn">View submitted response summary</button>
+        <span style="color:#dadce0;">•</span>
+        <button type="button" class="btn-link" id="submitAnotherBtn">Submit another response</button>
+      </div>
+
+      <div class="response-summary" id="responseSummary">
+        <h3 style="font-size:1.05rem; margin-bottom:14px; color:var(--primary-dark);">Submission Summary:</h3>
+        <div id="summaryContent"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('vendorForm');
+      const successCard = document.getElementById('successCard');
+      const clearBtn = document.getElementById('clearBtn');
+      const submitAnotherBtn = document.getElementById('submitAnotherBtn');
+      const toggleSummaryBtn = document.getElementById('toggleSummaryBtn');
+      const responseSummary = document.getElementById('responseSummary');
+      const summaryContent = document.getElementById('summaryContent');
+
+      // Card focus effects
+      const questionCards = document.querySelectorAll('.card');
+      questionCards.forEach(card => {
+        card.addEventListener('focusin', () => {
+          questionCards.forEach(c => c.classList.remove('focused'));
+          card.classList.add('focused');
+        });
+      });
+
+      // Clear error on change/input
+      const inputs = form.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          const card = input.closest('.card');
+          if (card && card.classList.contains('has-error')) {
+            validateCard(card);
+          }
+        });
+        input.addEventListener('change', () => {
+          const card = input.closest('.card');
+          if (card && card.classList.contains('has-error')) {
+            validateCard(card);
+          }
+        });
+      });
+
+      // Validation logic for individual cards
+      function validateCard(card) {
+        let isValid = true;
+        const cardId = card.id;
+
+        if (cardId === 'card-q1') {
+          const val = document.getElementById('vendorName').value.trim();
+          isValid = val.length > 0;
+        } else if (cardId === 'card-q2') {
+          const val = document.getElementById('contactPerson').value.trim();
+          isValid = val.length > 0;
+        } else if (cardId === 'card-q3') {
+          const val = document.getElementById('mobileNumber').value.trim();
+          const errSpan = document.getElementById('err-q3-text');
+          // Valid Indian mobile: starts with 6,7,8,9 with 10 digits; allows optional +91 or 0 prefix
+          const indianPhoneRegex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/;
+          if (!val) {
+            isValid = false;
+            errSpan.textContent = 'This is a required question';
+          } else if (!indianPhoneRegex.test(val.replace(/\s+/g, ''))) {
+            isValid = false;
+            errSpan.textContent = 'Please enter a valid 10-digit Indian mobile number (e.g. 9876543210 or +91 9876543210)';
+          } else {
+            isValid = true;
+          }
+        } else if (cardId === 'card-q4') {
+          const val = document.getElementById('emailAddress').value.trim();
+          const errSpan = document.getElementById('err-q4-text');
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!val) {
+            isValid = false;
+            errSpan.textContent = 'This is a required question';
+          } else if (!emailRegex.test(val)) {
+            isValid = false;
+            errSpan.textContent = 'Please enter a valid email address';
+          } else {
+            isValid = true;
+          }
+        } else if (cardId === 'card-q5') {
+          const val = document.getElementById('locations').value.trim();
+          isValid = val.length > 0;
+        } else if (cardId === 'card-q6') {
+          const val = document.getElementById('engineersCount').value.trim();
+          isValid = val.length > 0;
+        } else if (cardId === 'card-q7') {
+          const checked = form.querySelector('input[name="experience"]:checked');
+          isValid = !!checked;
+        } else if (cardId === 'card-q8') {
+          const checked = form.querySelector('input[name="singleVisit"]:checked');
+          isValid = !!checked;
+        } else if (cardId === 'card-q9') {
+          const checked = form.querySelector('input[name="siteVisitsSupport"]:checked');
+          isValid = !!checked;
+        } else if (cardId === 'card-q10') {
+          const val = document.getElementById('commercialProposal').value.trim();
+          isValid = val.length > 0;
+        } else if (cardId === 'card-confirmation') {
+          const checked = document.getElementById('confirmationCheckbox').checked;
+          isValid = checked;
+        }
+
+        if (!isValid) {
+          card.classList.add('has-error');
+        } else {
+          card.classList.remove('has-error');
+        }
+        return isValid;
+      }
+
+      // Handle Form Submit
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const cardsToValidate = [
+          'card-q1', 'card-q2', 'card-q3', 'card-q4', 'card-q5',
+          'card-q6', 'card-q7', 'card-q8', 'card-q9', 'card-q10',
+          'card-confirmation'
+        ];
+
+        let firstInvalidCard = null;
+
+        cardsToValidate.forEach(id => {
+          const card = document.getElementById(id);
+          const valid = validateCard(card);
+          if (!valid && !firstInvalidCard) {
+            firstInvalidCard = card;
+          }
+        });
+
+        if (firstInvalidCard) {
+          firstInvalidCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const focusable = firstInvalidCard.querySelector('input, textarea');
+          if (focusable) focusable.focus();
+          return;
+        }
+
+        // Gather submitted data
+        const formData = {
+          vendorName: document.getElementById('vendorName').value.trim(),
+          contactPerson: document.getElementById('contactPerson').value.trim(),
+          mobileNumber: document.getElementById('mobileNumber').value.trim(),
+          emailAddress: document.getElementById('emailAddress').value.trim(),
+          locations: document.getElementById('locations').value.trim(),
+          engineersCount: document.getElementById('engineersCount').value.trim(),
+          experience: form.querySelector('input[name="experience"]:checked').value,
+          singleVisit: form.querySelector('input[name="singleVisit"]:checked').value,
+          siteVisitsSupport: form.querySelector('input[name="siteVisitsSupport"]:checked').value,
+          commercialProposal: document.getElementById('commercialProposal').value.trim(),
+          additionalInfo: document.getElementById('additionalInfo').value.trim() || 'N/A',
+          submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+        };
+
+        // Render Summary
+        summaryContent.innerHTML = `
+          <div class="summary-item"><div class="summary-key">1. Vendor / Company Name</div><div class="summary-val">${escapeHtml(formData.vendorName)}</div></div>
+          <div class="summary-item"><div class="summary-key">2. Contact Person Name</div><div class="summary-val">${escapeHtml(formData.contactPerson)}</div></div>
+          <div class="summary-item"><div class="summary-key">3. Mobile Number</div><div class="summary-val">${escapeHtml(formData.mobileNumber)}</div></div>
+          <div class="summary-item"><div class="summary-key">4. Email Address</div><div class="summary-val">${escapeHtml(formData.emailAddress)}</div></div>
+          <div class="summary-item"><div class="summary-key">5. Locations / Cities Supported</div><div class="summary-val">${escapeHtml(formData.locations)}</div></div>
+          <div class="summary-item"><div class="summary-key">6. Number of Engineers Available</div><div class="summary-val">${escapeHtml(formData.engineersCount)}</div></div>
+          <div class="summary-item"><div class="summary-key">7. Networking Installation Experience</div><div class="summary-val">${escapeHtml(formData.experience)}</div></div>
+          <div class="summary-item"><div class="summary-key">8. Single Visit Installation &amp; Testing</div><div class="summary-val">${escapeHtml(formData.singleVisit)}</div></div>
+          <div class="summary-item"><div class="summary-key">9. Support 20 Visits/Day for 20 Days</div><div class="summary-val">${escapeHtml(formData.siteVisitsSupport)}</div></div>
+          <div class="summary-item"><div class="summary-key">10. Commercial Proposal / Expected Charges</div><div class="summary-val">${escapeHtml(formData.commercialProposal)}</div></div>
+          <div class="summary-item"><div class="summary-key">11. Additional Information</div><div class="summary-val">${escapeHtml(formData.additionalInfo)}</div></div>
+          <div class="summary-item"><div class="summary-key">Submitted Timestamp</div><div class="summary-val">${formData.submittedAt}</div></div>
+        `;
+
+        // Switch View to Confirmation Card
+        form.style.display = 'none';
+        successCard.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Clear Form button
+      clearBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to clear all entered responses?')) {
+          form.reset();
+          document.querySelectorAll('.card').forEach(card => card.classList.remove('has-error', 'focused'));
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      // Submit another response
+      submitAnotherBtn.addEventListener('click', () => {
+        form.reset();
+        document.querySelectorAll('.card').forEach(card => card.classList.remove('has-error', 'focused'));
+        responseSummary.classList.remove('active');
+        toggleSummaryBtn.textContent = 'View submitted response summary';
+        successCard.style.display = 'none';
+        form.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Toggle Summary
+      toggleSummaryBtn.addEventListener('click', () => {
+        const isOpen = responseSummary.classList.toggle('active');
+        toggleSummaryBtn.textContent = isOpen ? 'Hide submitted response summary' : 'View submitted response summary';
+      });
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+    });
+  </script>
+</body>
+</html>
